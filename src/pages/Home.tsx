@@ -2,6 +2,13 @@
 import { ArrowRight, CheckCircle, Briefcase, Users, Award, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from '@/components/ui/carousel';
 
 const Home = () => {
   return (
@@ -165,36 +172,60 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "Zillion Arete's data-driven approach has completely transformed our hiring process. Their understanding of our industry needs is truly impressive.",
-                author: "Rahul Sharma",
-                position: "CTO, Tech Innovations"
-              },
-              {
-                quote: "The quality of candidates provided by Zillion Arete has been exceptional. They truly understand our company culture and what we're looking for.",
-                author: "Priya Patel",
-                position: "HR Director, Global Solutions"
-              },
-              {
-                quote: "Working with Zillion Arete has significantly reduced our time-to-hire while improving the quality of our recruitment. Highly recommended!",
-                author: "Vikram Singh",
-                position: "Head of Engineering"
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Award className="h-6 w-6 text-yellow-500 mr-2" />
-                  <div className="text-yellow-500">★★★★★</div>
-                </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
-                <div>
-                  <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.position}</p>
-                </div>
-              </div>
-            ))}
+          <div className="relative px-10">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {[
+                  {
+                    quote: "Zillion Arete's data-driven approach has completely transformed our hiring process. Their understanding of our industry needs is truly impressive.",
+                    author: "Rahul Sharma",
+                    position: "CTO, Tech Innovations"
+                  },
+                  {
+                    quote: "The quality of candidates provided by Zillion Arete has been exceptional. They truly understand our company culture and what we're looking for.",
+                    author: "Priya Patel",
+                    position: "HR Director, Global Solutions"
+                  },
+                  {
+                    quote: "Working with Zillion Arete has significantly reduced our time-to-hire while improving the quality of our recruitment. Highly recommended!",
+                    author: "Vikram Singh",
+                    position: "Head of Engineering"
+                  },
+                  {
+                    quote: "Our partnership with Zillion Arete has been instrumental in building our tech team from scratch. Their insights into the talent market are invaluable.",
+                    author: "Ananya Desai",
+                    position: "Founder & CEO, StartupX"
+                  },
+                  {
+                    quote: "I've worked with several recruitment firms, but Zillion Arete stands out with their personalized approach and understanding of our technical requirements.",
+                    author: "Karthik Raman",
+                    position: "VP of Product"
+                  }
+                ].map((testimonial, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="bg-white p-8 rounded-lg shadow-md h-full">
+                      <div className="flex items-center mb-4">
+                        <Award className="h-6 w-6 text-yellow-500 mr-2" />
+                        <div className="text-yellow-500">★★★★★</div>
+                      </div>
+                      <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
+                      <div>
+                        <p className="font-semibold">{testimonial.author}</p>
+                        <p className="text-sm text-gray-500">{testimonial.position}</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-0 top-1/2" />
+              <CarouselNext className="absolute right-0 top-1/2" />
+            </Carousel>
           </div>
         </div>
       </section>
