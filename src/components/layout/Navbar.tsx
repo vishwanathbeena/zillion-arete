@@ -52,7 +52,7 @@ const Navbar = () => {
               ))}
             </div>
             <Button className="ml-8 bg-primary hover:bg-primary/90 text-white">
-              Get in Touch
+              <Link to="/contact" className="text-white">Get in Touch</Link>
             </Button>
           </div>
           
@@ -94,7 +94,7 @@ const Navbar = () => {
               className="mt-4 w-full bg-primary hover:bg-primary/90 text-white"
               onClick={() => setIsOpen(false)}
             >
-              Get in Touch
+              <Link to="/contact" className="text-white w-full h-full flex items-center justify-center">Get in Touch</Link>
             </Button>
           </div>
         </div>
