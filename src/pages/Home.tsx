@@ -2,6 +2,7 @@
 import { ArrowRight, CheckCircle, Briefcase, Users, Award, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import { 
   Carousel, 
   CarouselContent, 
@@ -9,8 +10,24 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
+import { type CarouselApi } from '@/components/ui/carousel';
 
 const Home = () => {
+  // Add carousel API ref and auto-revolving effect
+  const [carouselApi, setCarouselApi] = useRef<CarouselApi>();
+
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    // Auto-scroll every 3 seconds
+    const interval = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 3000);
+
+    // Clean up interval on unmount
+    return () => clearInterval(interval);
+  }, [carouselApi]);
+
   return (
     <div>
       {/* Hero Section */}
@@ -178,6 +195,7 @@ const Home = () => {
                 align: "start",
                 loop: true,
               }}
+              setApi={setCarouselApi}
               className="w-full"
             >
               <CarouselContent>
