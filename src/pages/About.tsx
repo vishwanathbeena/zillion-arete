@@ -1,5 +1,5 @@
 
-import { Users, Award, Clock, Briefcase, CheckCircle } from 'lucide-react';
+import { Users, Award, Clock, Briefcase, CheckCircle, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
