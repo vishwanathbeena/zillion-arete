@@ -12,9 +12,9 @@ const About = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">About Zillion Arete</h1>
             <p className="text-lg md:text-xl">
-              We're a team of recruiting experts dedicated to connecting talented professionals 
-              with forward-thinking companies. Learn more about our story, our values, and the 
-              people behind our success.
+              We're a premium talent acquisition firm dedicated to connecting organizations 
+              with exceptional professionals. Learn more about our story, our values, and what 
+              makes us different.
             </p>
           </div>
         </div>
@@ -27,21 +27,19 @@ const About = () => {
             <div>
               <h2 className="mb-6">Our Story</h2>
               <p className="text-gray-600 mb-4">
-                Founded in 2010, Zillion Arete began with a simple mission: to transform how companies 
-                find talent and how professionals find opportunities. Our founders, with over two decades 
-                of combined experience in recruiting and human resources, saw a gap in the market for a 
-                more personalized, relationship-driven approach to recruiting.
+                Founded in 2016, Zillion Arete began with a clear mission: to transform how organizations 
+                acquire talent by leveraging data-driven approaches and deep industry expertise. 
+                Headquartered in Bengaluru, we have grown to serve clients across India.
               </p>
               <p className="text-gray-600 mb-4">
-                What started as a small team of passionate recruiters has grown into a leading agency 
-                serving clients across multiple industries. Our growth has been organic, built on strong 
-                relationships and successful placements that speak for themselves.
+                What started as a small team of passionate recruiters has evolved into a premier talent 
+                acquisition firm with a nationwide presence. Our growth has been driven by our commitment 
+                to excellence and the exceptional results we deliver for our clients.
               </p>
               <p className="text-gray-600">
-                Today, Zillion Arete stands as a trusted partner for hundreds of companies and thousands 
-                of professionals. While we've expanded our services and reach, our founding principles 
-                remain unchanged: integrity, excellence, and a genuine commitment to the success of our 
-                clients and candidates.
+                Today, Zillion Arete stands as a trusted partner for organizations seeking to build high-performing 
+                teams. Our focus on innovation, data-driven methodologies, and ethical recruitment practices 
+                continues to define who we are and how we work.
               </p>
             </div>
             <div>
@@ -55,14 +53,58 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Our Focus */}
       <section className="section-padding bg-gray-50">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="mb-4">Our Focus Areas</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              At Zillion Arete, we specialize in identifying and recruiting top talent across various sectors,
+              with particular expertise in:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Briefcase className="h-12 w-12 text-primary mb-4" />,
+                title: "IT & Product",
+                description: "Software development, product management, QA, DevOps, and more."
+              },
+              {
+                icon: <Users className="h-12 w-12 text-primary mb-4" />,
+                title: "Engineering",
+                description: "Mechanical, electrical, civil, and other engineering disciplines."
+              },
+              {
+                icon: <Award className="h-12 w-12 text-primary mb-4" />,
+                title: "Sales & Marketing",
+                description: "Business development, digital marketing, content, and brand management."
+              },
+              {
+                icon: <Target className="h-12 w-12 text-primary mb-4" />,
+                title: "Operations",
+                description: "Supply chain, logistics, project management, and administration."
+              }
+            ].map((focus, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-md text-center">
+                <div className="flex justify-center">{focus.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{focus.title}</h3>
+                <p className="text-gray-600">{focus.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="section-padding">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="mb-4">Our Core Values</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               These principles guide everything we do at Zillion Arete, from how we interact with our clients 
-              to how we support our candidates.
+              to how we support candidates in their career journeys.
             </p>
           </div>
 
@@ -70,18 +112,18 @@ const About = () => {
             {[
               {
                 icon: <Award className="h-12 w-12 text-primary mb-4" />,
-                title: "Excellence",
-                description: "We strive for excellence in every interaction, every placement, and every relationship we build."
+                title: "Innovation",
+                description: "We continuously evolve our processes and leverage AI-enabled methodologies to stay ahead of industry trends."
               },
               {
                 icon: <CheckCircle className="h-12 w-12 text-primary mb-4" />,
                 title: "Integrity",
-                description: "We operate with complete transparency and honesty, building trust that lasts."
+                description: "We operate with complete transparency, honesty, and ethical practices in all our interactions."
               },
               {
                 icon: <Users className="h-12 w-12 text-primary mb-4" />,
-                title: "Partnership",
-                description: "We view ourselves as partners in our clients' success and our candidates' career journeys."
+                title: "Excellence",
+                description: "We are committed to delivering exceptional quality in every aspect of our service."
               }
             ].map((value, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-md text-center">
@@ -101,23 +143,23 @@ const About = () => {
             {[
               { 
                 icon: <Briefcase className="h-10 w-10 mx-auto mb-4" />, 
-                value: "1000+", 
+                value: "1500+", 
                 label: "Successful Placements" 
               },
               { 
                 icon: <Users className="h-10 w-10 mx-auto mb-4" />, 
-                value: "250+", 
+                value: "300+", 
                 label: "Client Companies" 
               },
               { 
                 icon: <Award className="h-10 w-10 mx-auto mb-4" />, 
-                value: "15+", 
-                label: "Industry Awards" 
+                value: "8+", 
+                label: "Years of Excellence" 
               },
               { 
                 icon: <Clock className="h-10 w-10 mx-auto mb-4" />, 
-                value: "13", 
-                label: "Years of Excellence" 
+                value: "25+", 
+                label: "Industry Sectors" 
               }
             ].map((stat, index) => (
               <div key={index}>
@@ -130,13 +172,50 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Our Approach */}
       <section className="section-padding">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80" 
+                alt="Data-driven analysis" 
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div>
+              <h2 className="mb-6">Our Data-Driven Approach</h2>
+              <p className="text-gray-600 mb-4">
+                At Zillion Arete, we leverage the power of data and AI to transform the talent acquisition process. 
+                Our approach combines advanced analytics with human expertise to deliver superior results.
+              </p>
+              
+              <div className="space-y-4 mt-6">
+                {[
+                  "AI-enabled candidate sourcing and screening",
+                  "Comprehensive skill and cultural fit assessment",
+                  "Market intelligence and salary benchmarking",
+                  "Predictive analytics for hiring success",
+                  "Customized recruitment strategies based on data insights"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team */}
+      <section className="section-padding bg-gray-50">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="mb-4">Meet Our Leadership Team</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our success is driven by our dedicated team of recruiting experts, led by professionals 
+              Our success is driven by our dedicated team of talent acquisition experts, led by professionals 
               with deep industry knowledge and a passion for connecting talent with opportunity.
             </p>
           </div>
@@ -144,22 +223,22 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Sarah Johnson",
-                position: "CEO & Founder",
-                bio: "With over 15 years in recruiting and HR leadership, Sarah founded Zillion Arete with a vision to transform the recruiting industry.",
-                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&h=400&q=80"
+                name: "Ramesh Kumar",
+                position: "Founder & CEO",
+                bio: "With over 15 years in the recruitment industry, Ramesh founded Zillion Arete with a vision to transform talent acquisition through innovation and data-driven approaches.",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80"
               },
               {
-                name: "James Richardson",
+                name: "Anita Desai",
                 position: "COO",
-                bio: "James oversees our day-to-day operations, ensuring we deliver exceptional service to both clients and candidates.",
-                image: "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?auto=format&fit=crop&w=400&h=400&q=80"
+                bio: "Anita oversees our day-to-day operations, ensuring we deliver exceptional service quality while driving operational excellence across all our functions.",
+                image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&h=400&q=80"
               },
               {
-                name: "Michelle Lee",
+                name: "Vikram Mehta",
                 position: "Director of Client Relations",
-                bio: "Michelle leads our client engagement team, focusing on building and maintaining strong relationships with our partner companies.",
-                image: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=400&h=400&q=80"
+                bio: "Vikram leads our client engagement team, focusing on building and maintaining strong relationships with our partner organizations across India.",
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=80"
               }
             ].map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">

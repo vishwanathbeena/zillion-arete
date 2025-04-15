@@ -12,11 +12,11 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Connecting Top Talent With Leading Employers
+                Elevate Your Talent Acquisition Journey
               </h1>
               <p className="text-lg md:text-xl mb-8">
-                Zillion Arete is a premier recruiting agency specializing in matching exceptional 
-                candidates with companies that value innovation and excellence.
+                Zillion Arete is a premium talent acquisition firm focused on delivering extraordinary 
+                value to organizations through innovative and data-driven recruitment solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
@@ -38,6 +38,39 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Us Preview */}
+      <section className="section-padding">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" 
+                alt="Team collaboration" 
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div>
+              <h2 className="mb-6">Who We Are</h2>
+              <p className="text-gray-600 mb-4">
+                Founded in 2016, Zillion Arete is a premium talent acquisition firm headquartered in Bengaluru, with
+                a nationwide presence across India.
+              </p>
+              <p className="text-gray-600 mb-4">
+                We specialize in end-to-end recruitment solutions with a focus on AI-enabled 
+                talent acquisition processes that deliver exceptional results for our clients.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Our expertise spans across IT, Product, Engineering, Sales, Marketing, and Operations roles,
+                helping organizations find the perfect talent match for their needs.
+              </p>
+              <Button className="bg-primary hover:bg-primary/90 text-white">
+                <Link to="/about">Learn More About Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Preview */}
       <section className="section-padding bg-gray-50">
         <div className="container">
@@ -52,18 +85,18 @@ const Home = () => {
             {[
               {
                 icon: <Briefcase className="h-12 w-12 text-primary mb-4" />,
+                title: "IT & Product Recruitment",
+                description: "Connect with skilled IT professionals and product talent who can drive your technology initiatives forward."
+              },
+              {
+                icon: <Users className="h-12 w-12 text-primary mb-4" />,
                 title: "Executive Search",
                 description: "Find top-level executives to lead your organization to success with our meticulous search process."
               },
               {
-                icon: <Users className="h-12 w-12 text-primary mb-4" />,
-                title: "IT Staffing",
-                description: "Connect with skilled IT professionals who can drive your technology initiatives forward."
-              },
-              {
                 icon: <Target className="h-12 w-12 text-primary mb-4" />,
-                title: "Permanent Placement",
-                description: "Build your dream team with our permanent placement services that focus on long-term success."
+                title: "AI-Enabled Recruitment",
+                description: "Leverage our data-driven approach to identify, attract, and retain the best talent for your organization."
               }
             ].map((service, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -86,18 +119,18 @@ const Home = () => {
             <div>
               <h2 className="mb-6">Why Choose Zillion Arete?</h2>
               <p className="text-gray-600 mb-8">
-                With years of experience in the recruiting industry, we've built a reputation for excellence 
-                and reliability. Our team of expert recruiters is dedicated to finding the perfect match 
-                between candidates and employers.
+                As a premier talent acquisition partner, we pride ourselves on our data-driven approach 
+                and deep industry expertise. Our innovative methodologies ensure we find not just candidates, 
+                but the right talent that aligns with your organization's values and goals.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "Industry expertise across multiple sectors",
-                  "Personalized approach to each client and candidate",
+                  "Industry expertise across IT, Product, Engineering, and more",
+                  "Dedicated relationship managers for personalized service",
                   "Extensive network of qualified professionals",
-                  "Commitment to long-term relationships",
-                  "Proven track record of successful placements"
+                  "Data-driven and AI-enabled recruitment processes",
+                  "Commitment to quality and ethical recruitment practices"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
@@ -135,19 +168,19 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Zillion Arete helped us fill a critical executive position that had been vacant for months. Their understanding of our industry was impressive.",
-                author: "Jennifer Smith",
-                position: "CEO, TechNova Inc."
+                quote: "Zillion Arete's data-driven approach has completely transformed our hiring process. Their understanding of our industry needs is truly impressive.",
+                author: "Rahul Sharma",
+                position: "CTO, Tech Innovations"
               },
               {
-                quote: "The caliber of candidates provided by Zillion Arete was outstanding. They truly understood our company culture and what we were looking for.",
-                author: "Michael Johnson",
-                position: "HR Director, Global Finance"
+                quote: "The quality of candidates provided by Zillion Arete has been exceptional. They truly understand our company culture and what we're looking for.",
+                author: "Priya Patel",
+                position: "HR Director, Global Solutions"
               },
               {
-                quote: "Working with Zillion Arete was a game-changer for my career. They placed me in a role that perfectly matches my skills and ambitions.",
-                author: "David Chen",
-                position: "Software Engineer"
+                quote: "Working with Zillion Arete has significantly reduced our time-to-hire while improving the quality of our recruitment. Highly recommended!",
+                author: "Vikram Singh",
+                position: "Head of Engineering"
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-md">
