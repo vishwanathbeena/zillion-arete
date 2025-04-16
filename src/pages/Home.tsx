@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { ArrowRight, CheckCircle, Briefcase, Users, Award, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -177,7 +178,26 @@ const Home = () => {
               opts={{
                 align: "start",
                 loop: true,
+                duration: 3000,  // Set duration for auto-play
               }}
+              plugins={[
+                {
+                  options: { delay: 3000 },  // Auto-play every 3 seconds
+                  start(api) {
+                    const autoplay = setInterval(() => {
+                      if (api.canScrollNext()) {
+                        api.scrollNext();
+                      } else {
+                        api.scrollTo(0);
+                      }
+                    }, 3000);
+
+                    return () => {
+                      clearInterval(autoplay);
+                    };
+                  },
+                }
+              ]}
               className="w-full"
             >
               <CarouselContent>
