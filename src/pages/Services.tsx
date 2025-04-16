@@ -1,4 +1,3 @@
-
 import { Target, Users, User, Briefcase, FileText, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -251,18 +250,18 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary text-white py-16">
+      {/* CTA Section - Updated with matrix-inspired theme */}
+      <section className="matrix-code bg-gradient-to-r from-[#0f1722] to-[#1A1F2C] text-white py-16">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 matrix-text">
               Let's Discuss Your Recruiting Needs
             </h2>
-            <p className="text-lg md:text-xl mb-8">
+            <p className="text-lg md:text-xl mb-8 text-gray-300">
               Ready to find the perfect talent for your organization? Contact us today to discuss how 
               our recruiting services can help you build a winning team.
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
+            <Button size="lg" className="bg-[#1EAEDB] text-white hover:bg-[#1EAEDB]/80 digital-glow">
               <Link to="/contact">Get in Touch</Link>
             </Button>
           </div>
