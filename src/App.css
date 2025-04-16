@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -12,10 +13,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(30, 215, 96, 0.7));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em rgba(30, 215, 96, 0.7));
 }
 
 @keyframes logo-spin {
@@ -39,4 +40,31 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Matrix-inspired code rain effect */
+.matrix-code {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-code:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 20px);
+  background: linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(30, 215, 96, 0.05) 75%, rgba(30, 215, 96, 0.1) 100%);
+  animation: rain 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
