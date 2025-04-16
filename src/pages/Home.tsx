@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { ArrowRight, CheckCircle, Briefcase, Users, Award, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -10,8 +10,34 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const Home = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
+  
+  // Setup autoplay for carousel
+  const autoplay = useCallback(() => {
+    if (!emblaApi) return;
+    
+    const interval = setInterval(() => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext();
+      } else {
+        emblaApi.scrollTo(0);
+      }
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [emblaApi]);
+  
+  // Initialize autoplay
+  useEffect(() => {
+    const cleanup = autoplay();
+    return () => {
+      if (cleanup) cleanup();
+    };
+  }, [autoplay]);
+  
   return (
     <div>
       {/* Hero Section */}
@@ -174,32 +200,7 @@ const Home = () => {
           </div>
 
           <div className="relative px-10">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-                duration: 3000,  // Set duration for auto-play
-              }}
-              plugins={[
-                {
-                  options: { delay: 3000 },  // Auto-play every 3 seconds
-                  start(api) {
-                    const autoplay = setInterval(() => {
-                      if (api.canScrollNext()) {
-                        api.scrollNext();
-                      } else {
-                        api.scrollTo(0);
-                      }
-                    }, 3000);
-
-                    return () => {
-                      clearInterval(autoplay);
-                    };
-                  },
-                }
-              ]}
-              className="w-full"
-            >
+            <div ref={emblaRef} className="overflow-hidden">
               <CarouselContent>
                 {[
                   {
@@ -243,9 +244,9 @@ const Home = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-0 top-1/2" />
-              <CarouselNext className="absolute right-0 top-1/2" />
-            </Carousel>
+            </div>
+            <CarouselPrevious className="absolute left-0 top-1/2" />
+            <CarouselNext className="absolute right-0 top-1/2" />
           </div>
         </div>
       </section>
